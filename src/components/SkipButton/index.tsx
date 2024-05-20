@@ -1,11 +1,12 @@
 import { TouchableOpacity, Text, View } from "react-native";
 import { StyledComponent } from "nativewind";
 
+
 export function SkipButton({ ...rest  }) {
     return (
-        <View className="flex-1 justify-end mb-10">
+        <View className="flex-1 justify-end mt-8">
         <StyledComponent component={TouchableOpacity} {...rest}>
-            <TouchableOpacity className="h-9 bg-white border-2 border-inputWeaknessColor w-20 rounded-md ml-60 mb-64 items-center justify-center">
+            <TouchableOpacity className="h-9 bg-white border-2 border-inputWeaknessColor w-20 rounded-md ml-60 mb-72 mt-96 items-center justify-center">
                 <Text className="text-textColor font-medium font-Principal text-md">
                     Pular
                 </Text>

@@ -1,11 +1,17 @@
 import { Text, View } from "react-native";
+import { StyledComponent } from "nativewind";
 
 
 export default function Texto() {
     return (
        <View>
-        <Text className="text-textColor font-medium font-Principal text-md">
-            Matenha suas informações seguras
+        <StyledComponent component={Text}>
+            <Text className="text-black bg-white font-medium font-Principal text-md">
+                Bem-vindo ao Guard
+            </Text>
+        </StyledComponent>
+        <Text className="text-black bg-white font-medium font-Principal text-md">
+            Bem-vindo ao Guard
         </Text>
         </View>
     )
