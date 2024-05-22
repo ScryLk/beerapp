@@ -1,5 +1,4 @@
 import { View, Text, TouchableOpacity } from "react-native";
-import  TittleHeader  from "../../components/TitleHeader";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faFile } from "@fortawesome/free-solid-svg-icons";
 import { useNavigation } from "@react-navigation/native";

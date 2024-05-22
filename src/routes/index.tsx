@@ -10,7 +10,7 @@ import LoginScreen from '../pages/LoginScreen';
 import Services from '../pages/Services';
 import MyBudgets from '../pages/Budgets/MyBudgets';
 import CreateBudgets from '../pages/Budgets/CreateBudgets/SelectType';
-import SelectExistent from '../pages/Budgets/CreateBudgets/SelectExistent';
+import SelectExistent from '../pages/Budgets/CreateBudgets/SelectExistentBudgets';
 
 
 const Tab = createStackNavigator();

@@ -1,5 +1,4 @@
 import { View, Image, Text, Button } from "react-native";
-import BackButton from "../../components/Buttons";
 import EmailInput from "../../components/LoginInputs";
 import { PasswordInput } from "../../components/LoginInputs";
 import { LoginButton } from "../../components/LoginInputs";
