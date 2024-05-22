@@ -12,6 +12,10 @@ import MyBudgets from '../pages/Budgets/MyBudgets';
 import CreateBudgets from '../pages/Budgets/CreateBudgets/SelectType';
 import SelectExistent from '../pages/Budgets/CreateBudgets/SelectExistentBudgets';
 
+import Configurations from '../pages/Configurations';
+import Access from '../pages/Configurations/ConfigTypes/Access';
+import language from '../pages/Configurations/ConfigTypes/Language';
+
 
 const Tab = createStackNavigator();
 
@@ -27,6 +31,9 @@ export default function Menu() {
           <Tab.Screen name="MyBudgets" component={MyBudgets} />
           <Tab.Screen name="CreateBudgets" component={CreateBudgets} />
           <Tab.Screen name="SelectExistent" component={SelectExistent} />
+          <Tab.Screen name="Configurations" component={Configurations} />
+          <Tab.Screen name="Access" component={Access} />
+          <Tab.Screen name="language" component={language} />
       </Tab.Navigator>
     </NavigationContainer>
   );

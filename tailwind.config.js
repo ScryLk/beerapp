@@ -11,7 +11,8 @@ module.exports = {
         ButtonUnvaible: '#7B7B7B',
         textColor: '#181F2A',
         inputColor: '#E8EAED',
-        budgetButton: '#8493A7'
+        budgetButton: '#8493A7',
+        configInputColors: 'F5F9FE'
         },
      },
   },
