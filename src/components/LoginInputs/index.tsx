@@ -49,7 +49,7 @@ export function LoginButton() {
     return (
         <View className="justify-end mt-10">
             <StyledComponent component={TouchableOpacity} >
-                <TouchableOpacity className="h-14 bg-primary w-80 rounded-md items-center justify-center"  onPress={() => {navigation.navigate('MyBudgets');}}>
+                <TouchableOpacity className="h-14 bg-primary w-80 rounded-md items-center justify-center"  onPress={() => {navigation.navigate('Services');}}>
                     <Text className="text-white font-medium font-Principal text-md">
                         Login
                     </Text>

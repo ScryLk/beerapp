@@ -7,6 +7,7 @@ import FirstWelcomePage from '../pages/welcomePage/FirstWelcomePage';
 import SecondWelcomePage from '../pages/welcomePage/SecondWelcomePage';
 import ThirdWelcomePage from '../pages/welcomePage/ThirdWelcomePage';
 import LoginScreen from '../pages/LoginScreen';
+import Services from '../pages/Services';
 import MyBudgets from '../pages/Budgets/MyBudgets';
 import CreateBudgets from '../pages/Budgets/CreateBudgets/SelectType';
 import SelectExistent from '../pages/Budgets/CreateBudgets/SelectExistent';
@@ -22,6 +23,7 @@ export default function Menu() {
           <Tab.Screen name="SecondWelcomePage" component={SecondWelcomePage} />
           <Tab.Screen name="ThirdWelcomePage" component={ThirdWelcomePage} />
           <Tab.Screen name="LoginScreen" component={LoginScreen} />
+          <Tab.Screen name="Services" component={Services} />
           <Tab.Screen name="MyBudgets" component={MyBudgets} />
           <Tab.Screen name="CreateBudgets" component={CreateBudgets} />
           <Tab.Screen name="SelectExistent" component={SelectExistent} />
