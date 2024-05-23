@@ -14,7 +14,9 @@ import SelectExistent from '../pages/Budgets/CreateBudgets/SelectExistentBudgets
 
 import Configurations from '../pages/Configurations';
 import Access from '../pages/Configurations/ConfigTypes/Access';
-import language from '../pages/Configurations/ConfigTypes/Language';
+import Language from '../pages/Configurations/ConfigTypes/Language';
+import Accessibility from '../pages/Configurations/ConfigTypes/Accessibility';
+import SpecsBudget from '../pages/Budgets/CreateBudgets/SpecsBudget';
 
 
 const Tab = createStackNavigator();
@@ -33,7 +35,10 @@ export default function Menu() {
           <Tab.Screen name="SelectExistent" component={SelectExistent} />
           <Tab.Screen name="Configurations" component={Configurations} />
           <Tab.Screen name="Access" component={Access} />
-          <Tab.Screen name="language" component={language} />
+          <Tab.Screen name="language" component={Language} />
+          <Tab.Screen name="Accessibility" component={Accessibility} />
+          <Tab.Screen name="SpecsBudget" component={SpecsBudget} />
+        
       </Tab.Navigator>
     </NavigationContainer>
   );

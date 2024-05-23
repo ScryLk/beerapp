@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import { View, Text, TouchableOpacity } from "react-native";
-import SelectButton from "../PrimaryButton";
 
 export default function SelectExistingMachinesInput(title) {
     const [selected, setSelected] = useState(false);
-
     return (
         <View className="mt-5">
             <TouchableOpacity

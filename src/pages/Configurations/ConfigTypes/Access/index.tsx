@@ -1,14 +1,17 @@
 import { Text, TouchableOpacity, View, Switch } from "react-native";
 import HeaderOnlyBack from "../../../../components/Headers/HeaderOnlyBack";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-import { faKey, faChevronRight, faFaceSmile, faPodcast, faHands } from "@fortawesome/free-solid-svg-icons";
+import { faKey, faChevronRight, faFaceSmile, faPodcast } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 
-export default function Configurations() {
+export default function Access() {
 
-    const [isEnabled, setIsEnabled] = useState(false);
-    const toggleSwitch = () => setIsEnabled(previousState => !previousState);
-  
+  const [isFaceIdEnabled, setIsFaceIdEnabled] = useState(false);
+  const [isDigitalEnabled, setIsDigitalEnabled] = useState(false);
+
+  const toggleFaceIdSwitch = () => setIsFaceIdEnabled(previousState => !previousState);
+  const toggleDigitalSwitch = () => setIsDigitalEnabled(previousState => !previousState);
+
   return (
     <View className="items-center flex-1 mt-20">
       <HeaderOnlyBack title={"Acesso"} />
@@ -31,16 +34,16 @@ export default function Configurations() {
             <FontAwesomeIcon icon={faFaceSmile} />
           </View>
           <View className="ml-5 flex-1">
-            <Text className="text-xl">Face id</Text>
+            <Text className="text-xl">Face ID</Text>
           </View>
           <View className="mr-3">
-          <Switch
-        trackColor={{false: '#767577', true: '#6750A4'}}
-        thumbColor={isEnabled ? '#ffff' : '#f4f3f4'}
-        ios_backgroundColor="#3e3e3e"
-        onValueChange={toggleSwitch}
-        value={isEnabled}
-      />
+            <Switch
+              trackColor={{ false: '#767577', true: '#6750A4' }}
+              thumbColor={isFaceIdEnabled ? '#ffff' : '#f4f3f4'}
+              ios_backgroundColor="#3e3e3e"
+              onValueChange={toggleFaceIdSwitch}
+              value={isFaceIdEnabled}
+            />
           </View>
         </TouchableOpacity>
 
@@ -52,19 +55,15 @@ export default function Configurations() {
             <Text className="text-xl">Digital</Text>
           </View>
           <View className="mr-3">
-          <Switch
-        trackColor={{false: '#767577', true: '#6750A4'}}
-        thumbColor={isEnabled ? '#ffff' : '#f4f3f4'}
-        ios_backgroundColor="#3e3e3e"
-        onValueChange={toggleSwitch}
-        value={isEnabled}
-      />
+            <Switch
+              trackColor={{ false: '#767577', true: '#6750A4' }}
+              thumbColor={isDigitalEnabled ? '#ffff' : '#f4f3f4'}
+              ios_backgroundColor="#3e3e3e"
+              onValueChange={toggleDigitalSwitch}
+              value={isDigitalEnabled}
+            />
           </View>
-        
         </TouchableOpacity>
-
-        
-
       </View>
       
     </View>

@@ -59,7 +59,7 @@ export default function Configurations() {
         
         </TouchableOpacity>
 
-        <TouchableOpacity className="flex-row items-center mt-5 w-full h-16 rounded-md bg-purple-200">
+        <TouchableOpacity className="flex-row items-center mt-5 w-full h-16 rounded-md bg-purple-200" onPress={() => navigation.navigate("Accessibility")}>
           <View className="bg-purple-300 h-10 w-10 items-center rounded-md justify-center ml-3">
             <FontAwesomeIcon icon={faHands} />
           </View>
