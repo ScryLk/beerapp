@@ -12,9 +12,10 @@ export default function HeaderBackPlus({ title }) {
   const navigation = useNavigation();
 
   return (
+    
     <View className="flex-row justify-between items-center p-4">
       {/* Botão de Voltar */}
-      <TouchableOpacity className="bg-slate-100 border-2 border-ButtonsHeader w-10 h-10 rounded-lg items-center justify-center">
+      <TouchableOpacity className="bg-slate-100 border-2 border-ButtonsHeader w-10 h-10 rounded-lg items-center justify-center" onPress={() => {navigation.goBack()}}>
         <FontAwesomeIcon icon={faChevronLeft} />
       </TouchableOpacity>
 
