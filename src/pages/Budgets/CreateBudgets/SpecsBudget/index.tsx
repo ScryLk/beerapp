@@ -40,11 +40,15 @@ export default function SpecsBudget() {
             <SpeedProcessor />
           </View>
           <View className="mt-8 w-full">
-            <Text className="font-bold text-lg mb-1">Memória</Text>
+            <Text className="font-bold text-lg mb-1">
+                Memória
+            </Text>
             <Memory />
           </View>
           <View className="mt-8 w-full mb-5">
-            <Text className="font-bold text-lg mb-1">Painel de Controle</Text>
+            <Text className="font-bold text-lg mb-1">
+                Painel de Controle
+            </Text>
             <ControlPainel />
           </View>
           <View className="mt-8 w-full mb-5">
@@ -54,19 +58,27 @@ export default function SpecsBudget() {
             <FrontBackPrint />
           </View>
           <View className="mt-6 w-full mb-5">
-            <Text className="font-bold text-lg mb-1">NFC</Text>
+            <Text className="font-bold text-lg mb-1">
+                NFC
+            </Text>
             <Nfc />
           </View>
           <View className="mt-8 w-full mb-5">
-            <Text className="font-bold text-lg mb-1">Velocidade de Cópia</Text>
+            <Text className="font-bold text-lg mb-1">
+                Velocidade de Cópia
+            </Text>
             <SpeedCopy />
           </View>
           <View className="mt-8 w-full mb-5">
-            <Text className="font-bold text-lg mb-1">Resolução de Cópia</Text>
+            <Text className="font-bold text-lg mb-1">
+                Resolução de Cópia
+            </Text>
             <CopyResolution />
           </View>
           <View className="mt-8 w-full mb-5">
-            <Text className="font-bold text-lg mb-1">Tooner Para</Text>
+            <Text className="font-bold text-lg mb-1">
+                Tooner Para
+            </Text>
             <Tooner />
           </View>
         </View>

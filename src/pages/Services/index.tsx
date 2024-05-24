@@ -14,7 +14,7 @@ export default function Services() {
   return (
     <View className="mt-20">
       <HeaderOnlyTitle title="Serviços" />
-      <Text className="text-xl font-bold ml-5">Mais usados</Text>
+      <Text className="text-2xl font-bold ml-5">Mais usados</Text>
       <View className="flex-row items-center">
         <TouchableOpacity
           className="text-black ml-5 mt-5 bg-slate-200 align-center shadow justify-center w-28 h-32 rounded-md"

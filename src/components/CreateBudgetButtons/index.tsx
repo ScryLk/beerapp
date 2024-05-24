@@ -10,14 +10,22 @@ export default function CreateBudgetButtons() {
         <View>
             <TouchableOpacity className="bg-slate-300 mt-10 w-80 h-20 py-2 px-4 rounded-lg items-start align-middle justify-center" onPress={() => {navigation.navigate('SelectExistent');}}>
                 <View style={{ flexDirection: 'row', alignItems: 'flex-start' }}>
+                    <View className='bg-white w-10 h-10 justify-center rounded-full items-center'>
                     <FontAwesomeIcon icon={faPrint} />
-                    <Text className="text-black ml-5">Selecionar máquina existente</Text>
+                    </View>
+                    <View className='items-center align-middle '> 
+                    <Text className="text-black ml-5 mt-3">Selecionar máquina existente</Text>
+                    </View>
                 </View>
             </TouchableOpacity>
-            <TouchableOpacity className="bg-slate-300 mt-5 w-80 h-20 py-2 px-4 rounded-lg items-start align-middle justify-center">
+            <TouchableOpacity className="bg-slate-300 mt-10 w-80 h-20 py-2 px-4 rounded-lg items-start align-middle justify-center" onPress={() => {navigation.navigate('SelectExistent');}}>
                 <View style={{ flexDirection: 'row', alignItems: 'flex-start' }}>
+                    <View className='bg-white w-10 h-10 justify-center rounded-full items-center'>
                     <FontAwesomeIcon icon={faList} />
-                    <Text className="text-black ml-5">Inserir os dados manualmente</Text>
+                    </View>
+                    <View className='items-center align-middle '> 
+                    <Text className="text-black ml-5 mt-3">Inserir os dados manualmente</Text>
+                    </View>
                 </View>
             </TouchableOpacity>
         </View>
