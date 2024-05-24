@@ -17,8 +17,8 @@ export default function Access() {
       <HeaderOnlyBack title={"Acesso"} />
       
       <View className="w-full px-4">
-        <TouchableOpacity className="flex-row items-center mt-5 w-full h-16 rounded-md bg-purple-200">
-          <View className="bg-purple-300 h-10 w-10 items-center rounded-md justify-center ml-3">
+        <TouchableOpacity className="flex-row items-center mt-5 w-full h-16 rounded-md">
+        <View className="bg-slate-200 h-14 w-14 items-center rounded-md justify-center ml-3">
             <FontAwesomeIcon icon={faKey} />
           </View>
           <View className="ml-5 flex-1">
@@ -29,8 +29,8 @@ export default function Access() {
           </View>
         </TouchableOpacity>
 
-        <TouchableOpacity className="flex-row items-center mt-5 w-full h-16 rounded-md bg-purple-200">
-          <View className="bg-purple-300 h-10 w-10 items-center rounded-md justify-center ml-3">
+        <TouchableOpacity className="flex-row items-center mt-5 w-full h-16 rounded-md">
+          <View className="bg-slate-200 h-14 w-14 items-center rounded-md justify-center ml-3">
             <FontAwesomeIcon icon={faFaceSmile} />
           </View>
           <View className="ml-5 flex-1">
@@ -47,8 +47,8 @@ export default function Access() {
           </View>
         </TouchableOpacity>
 
-        <TouchableOpacity className="flex-row items-center mt-5 w-full h-16 rounded-md bg-purple-200">
-          <View className="bg-purple-300 h-10 w-10 items-center rounded-md justify-center ml-3">
+        <TouchableOpacity className="flex-row items-center mt-5 w-full h-16 rounded-md ">
+        <View className="bg-slate-200 h-14 w-14 items-center rounded-md justify-center ml-3">
             <FontAwesomeIcon icon={faPodcast} />
           </View>
           <View className="ml-5 flex-1">

@@ -6,11 +6,11 @@ import { faChevronRight, faFont } from "@fortawesome/free-solid-svg-icons";
 export default function Accessibility() {
   return (
     <View className="items-center flex-1 mt-20">
-      <HeaderOnlyBack title={"Acesso"} />
+      <HeaderOnlyBack title={"Acessibilidade"} />
 
       <View className="w-full px-4">
-        <TouchableOpacity className="flex-row items-center mt-5 w-full h-16 rounded-md bg-purple-200">
-          <View className="bg-purple-300 h-10 w-10 items-center rounded-md justify-center ml-3">
+        <TouchableOpacity className="flex-row items-center mt-5 w-full h-16 rounded-md">
+        <View className="bg-slate-200 h-14 w-14 items-center rounded-md justify-center ml-3">
             <FontAwesomeIcon icon={faFont} />
           </View>
           <View className="ml-5 flex-1">
