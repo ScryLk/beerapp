@@ -19,6 +19,7 @@ import Accessibility from '../pages/Configurations/ConfigTypes/Accessibility';
 import SpecsBudget from '../pages/Budgets/CreateBudgets/SpecsBudget';
 
 import Clients from '../pages/Clients';
+import CreateClient from '../pages/Clients/CreateClient';
 
 
 const Tab = createStackNavigator();
@@ -41,6 +42,7 @@ export default function Menu() {
           <Tab.Screen name="Accessibility" component={Accessibility} />
           <Tab.Screen name="SpecsBudget" component={SpecsBudget} />
           <Tab.Screen name="Clients" component={Clients} />
+          <Tab.Screen name="CreateClient" component={CreateClient} />
         
       </Tab.Navigator>
     </NavigationContainer>
