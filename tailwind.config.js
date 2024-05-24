@@ -12,8 +12,10 @@ module.exports = {
         textColor: '#181F2A',
         inputColor: '#E8EAED',
         budgetButton: '#8493A7',
-        configInputColors: 'F5F9FE',
-        whiteColor: 'FDFDFD'
+        configInputColors: '#F8FBFF',
+        whiteColor: 'FDFDFD',
+        clientsColor: '#58CDF8',
+        toolsColor: '#797979'
         },
      },
   },

@@ -1,8 +1,12 @@
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text, Image, TouchableOpacity } from "react-native";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faFile, faGear, faUser } from "@fortawesome/free-solid-svg-icons";
 import { useNavigation } from "@react-navigation/native";
 import { HeaderOnlyTitle } from "../../components/Headers/HeaderOnlyTitle";
+
+import storageIcon from "../../assets/images/icons/storagepng.png";
+import clientsIcon from "../../assets/images/icons/clients.png";
+import toolsIcon from "../../assets/images/icons/tools.png";
 
 export default function Services() {
   const navigation = useNavigation();
@@ -17,7 +21,7 @@ export default function Services() {
           onPress={() => navigation.navigate("MyBudgets")}
         >
           <View className="items-center ml-6 justify-center bg-primary w-16 h-16 rounded-full">
-            <FontAwesomeIcon icon={faFile} />
+            <Image source={storageIcon} />
           </View>
           <View>
             <Text className="text-center mt-2">Meus Orçamentos</Text>
@@ -27,11 +31,11 @@ export default function Services() {
           className="text-black ml-5 mt-5 bg-slate-200 align-center justify-center shadow w-28 h-32 rounded-md"
           onPress={() => navigation.navigate("Reports")}
         >
-          <View className="items-center justify-center ml-6 bg-primary w-16 h-16 rounded-full">
-            <FontAwesomeIcon icon={faUser} />
+          <View className="items-center justify-center ml-6 mb-3 bg-clientsColor w-16 h-16 rounded-full">
+            <Image source={clientsIcon} />
           </View>
           <View>
-            <Text className="text-center mt-2">Meus {"\n"} Relatórios</Text>
+            <Text className="text-center mt-2">Clientes</Text>
           </View>
         </TouchableOpacity>
       </View>
@@ -43,8 +47,8 @@ export default function Services() {
           className="text-black ml-5 mt-5 bg-slate-200 align-center shadow justify-center  w-28 h-32 rounded-md"
           onPress={() => navigation.navigate("Configurations")}
         >
-          <View className="items-center justify-center ml-6 mb-3 bg-primary w-16 h-16 rounded-full">
-            <FontAwesomeIcon icon={faGear} />
+          <View className="items-center justify-center ml-6 mb-3 bg-slate-600 w-16 h-16 rounded-full">
+            <Image source={toolsIcon} />
           </View>
           <View>
             <Text className="text-center mt-2">Configurações</Text>

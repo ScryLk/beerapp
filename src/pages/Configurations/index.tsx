@@ -1,9 +1,14 @@
-import { Text, TouchableOpacity, View, Switch } from "react-native";
+import { Text, TouchableOpacity, View, Image, Switch } from "react-native";
 import HeaderOnlyBack from "../../components/Headers/HeaderOnlyBack";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faKey, faChevronRight, faLanguage, faBell, faHands } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
+
+import passwordIcon from "../../assets/images/icons/password.png";
+import languageIcon from "../../assets/images/icons/language.png";
+import notificationIcon from "../../assets/images/icons/alerta.png";
+import handsIcon from "../../assets/images/icons/hand.png";
 
 export default function Configurations() {
 
@@ -16,9 +21,9 @@ export default function Configurations() {
       <HeaderOnlyBack title={"Config"} />
       
       <View className="w-full px-4">
-        <TouchableOpacity className="flex-row items-center mt-5 w-full h-16 rounded-md bg-purple-200" onPress={() => navigation.navigate("Access")}>
-          <View className="bg-purple-300 h-10 w-10 items-center rounded-md justify-center ml-3">
-            <FontAwesomeIcon icon={faKey} />
+        <TouchableOpacity className="flex-row items-center mt-5 w-full h-16 rounded-md " onPress={() => navigation.navigate("Access")}>
+          <View className="bg-slate-200 h-14 w-14 items-center rounded-md justify-center ml-3">
+            <Image source={passwordIcon} />
           </View>
           <View className="ml-5 flex-1">
             <Text className="text-xl">Acesso</Text>
@@ -28,9 +33,9 @@ export default function Configurations() {
           </View>
         </TouchableOpacity>
 
-        <TouchableOpacity className="flex-row items-center mt-5 w-full h-16 rounded-md bg-purple-200" onPress={() => navigation.navigate("language")}>
-          <View className="bg-purple-300 h-10 w-10 items-center rounded-md justify-center ml-3">
-            <FontAwesomeIcon icon={faLanguage} />
+        <TouchableOpacity className="flex-row items-center mt-5 w-full h-16 rounded-md " onPress={() => navigation.navigate("language")}>
+          <View className="bg-slate-200 h-14 w-14 items-center rounded-md justify-center ml-3">
+            <Image source={languageIcon} />
           </View>
           <View className="ml-5 flex-1">
             <Text className="text-xl">Idioma</Text>
@@ -40,9 +45,9 @@ export default function Configurations() {
           </View>
         </TouchableOpacity>
 
-        <TouchableOpacity className="flex-row items-center mt-5 w-full h-16 rounded-md bg-purple-200">
-          <View className="bg-purple-300 h-10 w-10 items-center rounded-md justify-center ml-3">
-            <FontAwesomeIcon icon={faBell} />
+        <TouchableOpacity className="flex-row items-center mt-5 w-full h-16 rounded-md ">
+          <View className="bg-slate-200 h-14 w-14 items-center rounded-md justify-center ml-3">
+            <Image source={notificationIcon} />
           </View>
           <View className="ml-5 flex-1">
             <Text className="text-xl">Notificações</Text>
@@ -59,9 +64,9 @@ export default function Configurations() {
         
         </TouchableOpacity>
 
-        <TouchableOpacity className="flex-row items-center mt-5 w-full h-16 rounded-md bg-purple-200" onPress={() => navigation.navigate("Accessibility")}>
-          <View className="bg-purple-300 h-10 w-10 items-center rounded-md justify-center ml-3">
-            <FontAwesomeIcon icon={faHands} />
+        <TouchableOpacity className="flex-row items-center mt-5 w-full h-16 rounded-md " onPress={() => navigation.navigate("Accessibility")}>
+          <View className="bg-slate-200 h-14 w-14 items-center rounded-md justify-center ml-3">
+            <Image source={handsIcon} />
           </View>
           <View className="ml-5 flex-1">
             <Text className="text-xl">Acessibilidade</Text>
