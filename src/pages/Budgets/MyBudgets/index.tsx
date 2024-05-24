@@ -11,7 +11,6 @@ export default function MyBudgets() {
         <View className="item-center justify-center flex-1">
             <Text className="text-lg">Nenhum Orcamento Encontrado </Text>
         </View>
-        <SelectButton />
     </View>
     );
 }

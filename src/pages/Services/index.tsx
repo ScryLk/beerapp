@@ -29,7 +29,7 @@ export default function Services() {
         </TouchableOpacity>
         <TouchableOpacity
           className="text-black ml-5 mt-5 bg-slate-200 align-center justify-center shadow w-28 h-32 rounded-md"
-          onPress={() => navigation.navigate("Reports")}
+          onPress={() => navigation.navigate("Clients")}
         >
           <View className="items-center justify-center ml-6 mb-3 bg-clientsColor w-16 h-16 rounded-full">
             <Image source={clientsIcon} />

@@ -38,20 +38,18 @@ const pickerSelectStyles = StyleSheet.create({
     fontSize: 16,
     paddingVertical: 12,
     paddingHorizontal: 10,
-    borderWidth: 1,
     borderColor: 'gray',
     borderRadius: 3,
     color: 'black',
     paddingRight: 30, // To ensure the text is never behind the icon
     backgroundColor: 'white',
-    width: '100%', // Full width
+    width: '80%', // Full width
     textAlign: 'center', // Center text
   },
   inputAndroid: {
     fontSize: 16,
     paddingHorizontal: 10,
     paddingVertical: 8,
-    borderWidth: 0.5,
     borderColor: '#6750A4',
     borderRadius: 8,
     color: 'black',
