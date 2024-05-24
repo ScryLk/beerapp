@@ -39,3 +39,18 @@ export function SelectButton() {
         </View>
     );
 }
+
+export function CreateButton() {
+    const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
+    return (
+        <View className="flex-1 justify-end">
+            <StyledComponent component={TouchableOpacity} >
+                <TouchableOpacity className="h-14 bg-primary w-80 rounded-md items-center mb-10 justify-center" onPress={() => navigation.navigate("SpecsBudget")}>
+                    <Text className="text-white font-medium font-Principal text-md">
+                        Criar Orçamento
+                    </Text>
+                </TouchableOpacity>
+            </StyledComponent>
+        </View>
+    );
+}

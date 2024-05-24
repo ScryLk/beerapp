@@ -12,6 +12,7 @@ import { Nfc } from "../../../../components/Select/Budgets/Nfc";
 import { SpeedCopy } from "../../../../components/Select/Budgets/SpeedCopy";
 import { CopyResolution } from "../../../../components/Select/Budgets/CopyResolution";
 import { Tooner } from "../../../../components/Select/Budgets/Tooner";
+import { CreateButton } from "../../../../components/PrimaryButton";
 
 export default function SpecsBudget() {
   return (
@@ -27,11 +28,15 @@ export default function SpecsBudget() {
             <SelectClients />
           </View>
           <View className="mt-8 w-full">
-            <Text className="font-bold text-lg mb-1">Resolução de Impressão</Text>
+            <Text className="font-bold text-lg mb-1">
+              Resolução de Impressão
+            </Text>
             <PrintResolution />
           </View>
           <View className="mt-8 w-full">
-            <Text className="font-bold text-lg mb-1">Velocidade do Processador</Text>
+            <Text className="font-bold text-lg mb-1">
+              Velocidade do Processador
+            </Text>
             <SpeedProcessor />
           </View>
           <View className="mt-8 w-full">
@@ -43,10 +48,12 @@ export default function SpecsBudget() {
             <ControlPainel />
           </View>
           <View className="mt-8 w-full mb-5">
-            <Text className="font-bold text-lg mb-1">Impressão frente e verso automatica</Text>
+            <Text className="font-bold text-lg mb-1">
+              Impressão frente e verso automatica
+            </Text>
             <FrontBackPrint />
           </View>
-          <View className="mt-8 w-full mb-5">
+          <View className="mt-6 w-full mb-5">
             <Text className="font-bold text-lg mb-1">NFC</Text>
             <Nfc />
           </View>
@@ -62,6 +69,9 @@ export default function SpecsBudget() {
             <Text className="font-bold text-lg mb-1">Tooner Para</Text>
             <Tooner />
           </View>
+        </View>
+        <View className="items-center flex-1 justify-center">
+          <CreateButton />
         </View>
       </ScrollView>
     </View>
