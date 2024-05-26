@@ -23,7 +23,7 @@ export default function Configurations() {
       <View className="w-full px-4">
         <TouchableOpacity className="flex-row items-center mt-5 w-full h-16 rounded-md " onPress={() => navigation.navigate("Access")}>
           <View className="bg-slate-200 h-14 w-14 items-center rounded-md justify-center ml-3">
-            <Image source={passwordIcon} size={25}/>
+            <FontAwesomeIcon icon={faKey} size={25} color="#6359E7" />
           </View>
           <View className="ml-5 flex-1">
             <Text className="text-xl">Acesso</Text>
@@ -35,7 +35,7 @@ export default function Configurations() {
 
         <TouchableOpacity className="flex-row items-center mt-5 w-full h-16 rounded-md " onPress={() => navigation.navigate("language")}>
           <View className="bg-slate-200 h-14 w-14 items-center rounded-md justify-center ml-3">
-            <Image source={languageIcon} />
+            <FontAwesomeIcon icon={faLanguage} size={25} color="#6359E7" />
           </View>
           <View className="ml-5 flex-1">
             <Text className="text-xl">Idioma</Text>
@@ -47,7 +47,7 @@ export default function Configurations() {
 
         <TouchableOpacity className="flex-row items-center mt-5 w-full h-16 rounded-md ">
           <View className="bg-slate-200 h-14 w-14 items-center rounded-md justify-center ml-3">
-            <Image source={notificationIcon} />
+            <FontAwesomeIcon icon={faBell} size={25} color="#6359E7"/>
           </View>
           <View className="ml-5 flex-1">
             <Text className="text-xl">Notificações</Text>
@@ -66,7 +66,7 @@ export default function Configurations() {
 
         <TouchableOpacity className="flex-row items-center mt-5 w-full h-16 rounded-md " onPress={() => navigation.navigate("Accessibility")}>
           <View className="bg-slate-200 h-14 w-14 items-center rounded-md justify-center ml-3">
-            <Image source={handsIcon} />
+            <FontAwesomeIcon icon={faHands} color="#6359E7" size={25}/>
           </View>
           <View className="ml-5 flex-1">
             <Text className="text-xl">Acessibilidade</Text>

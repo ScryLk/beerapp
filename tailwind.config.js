@@ -16,7 +16,8 @@ module.exports = {
         configInputColors: '#F8FBFF',
         whiteColor: 'FDFDFD',
         clientsColor: '#58CDF8',
-        toolsColor: '#797979'
+        toolsColor: '#797979',
+        inputMachinesColor: '#f5f9fe'
         },
      },
   },
