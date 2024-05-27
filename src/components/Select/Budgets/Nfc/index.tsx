@@ -8,7 +8,7 @@ export const Nfc = () => {
   const [selectedValue, setSelectedValue] = useState('Português');
 
   return (
-    <View  className='bg-inputColor flex-row w-96 mr-20 ml-1 h-14  rounded-md items-center justify-between flex-1'>
+    <View  className='bg-inputColor flex-row w-96 mr-20  h-14  rounded-md items-center justify-between flex-1'>
         <View className='items-center'> 
       </View>
       <View> 

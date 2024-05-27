@@ -13,7 +13,7 @@ export default function Access() {
   const toggleDigitalSwitch = () => setIsDigitalEnabled(previousState => !previousState);
 
   return (
-    <View className="items-center flex-1 mt-20">
+    <View className="items-center flex-1 mt-10">
       <HeaderOnlyBack title={"Acesso"} />
       
       <View className="w-full px-4">

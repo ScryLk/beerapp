@@ -1,6 +1,11 @@
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-import { faFile, faGear, faUser, faChartSimple } from "@fortawesome/free-solid-svg-icons";
+import {
+  faFile,
+  faGear,
+  faUser,
+  faChartSimple,
+} from "@fortawesome/free-solid-svg-icons";
 import { useNavigation } from "@react-navigation/native";
 import { HeaderOnlyTitle } from "../../components/Headers/HeaderOnlyTitle";
 
@@ -13,7 +18,6 @@ export default function Services() {
 
   return (
     <View className="mt-20">
-      <HeaderOnlyTitle title="Serviços" />
       <Text className="text-2xl font-bold ml-5">Mais usados</Text>
       <View className="flex-row items-center">
         <TouchableOpacity
@@ -50,10 +54,8 @@ export default function Services() {
           </View>
         </TouchableOpacity>
       </View>
-
       
-      
-
+   
       <Text className="text-xl font-semibold mt-10 ml-5">Outros</Text>
 
       <View className="flex-row items-center  justify-between">

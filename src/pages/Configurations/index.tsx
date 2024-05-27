@@ -5,11 +5,6 @@ import { faKey, faChevronRight, faLanguage, faBell, faHands } from "@fortawesome
 import { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 
-import passwordIcon from "../../assets/images/icons/password.png";
-import languageIcon from "../../assets/images/icons/language.png";
-import notificationIcon from "../../assets/images/icons/alerta.png";
-import handsIcon from "../../assets/images/icons/hand.png";
-
 export default function Configurations() {
 
     const [isEnabled, setIsEnabled] = useState(false);
@@ -17,7 +12,7 @@ export default function Configurations() {
     const navigation = useNavigation();
   
   return (
-    <View className="items-center flex-1 mt-20">
+    <View className="items-center flex-1 mt-10">
       <HeaderOnlyBack title={"Config"} />
       
       <View className="w-full px-4">
@@ -33,7 +28,7 @@ export default function Configurations() {
           </View>
         </TouchableOpacity>
 
-        <TouchableOpacity className="flex-row items-center mt-5 w-full h-16 rounded-md " onPress={() => navigation.navigate("language")}>
+        <TouchableOpacity className="flex-row items-center mt-5 w-full h-16 rounded-md " onPress={() => navigation.navigate("Language")}>
           <View className="bg-slate-200 h-14 w-14 items-center rounded-md justify-center ml-3">
             <FontAwesomeIcon icon={faLanguage} size={25} color="#6359E7" />
           </View>

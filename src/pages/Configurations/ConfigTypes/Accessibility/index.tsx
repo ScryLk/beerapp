@@ -5,7 +5,7 @@ import { faChevronRight, faFont } from "@fortawesome/free-solid-svg-icons";
 
 export default function Accessibility() {
   return (
-    <View className="items-center flex-1 mt-20">
+    <View className="items-center flex-1 mt-10">
       <HeaderOnlyBack title={"Acessibilidade"} />
 
       <View className="w-full px-4">

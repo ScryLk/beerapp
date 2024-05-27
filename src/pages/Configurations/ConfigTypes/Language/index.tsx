@@ -8,7 +8,7 @@ export default function Language() {
     
 
   return (
-    <View className="items-center flex-1 mt-20">
+    <View className="items-center flex-1 mt-10">
       <HeaderOnlyBack title={"Idioma"} />
 
       <View className="w-full px-4">

@@ -5,7 +5,7 @@ import { SelectButton } from "../../../components/PrimaryButton";
 
 export default function MyBudgets() {
     return (
-    <View className="items-center flex-1 mt-20">
+    <View className="items-center flex-1 mt-10">
         <HeaderBackPlus title="Meus Orçamentos"/>
         <SearchBar />
         <View className="item-center justify-center flex-1">

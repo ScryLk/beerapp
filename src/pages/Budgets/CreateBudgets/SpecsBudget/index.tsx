@@ -6,20 +6,21 @@ import { SpeedProcessor } from "../../../../components/Select/Budgets/SpeedProce
 import { SelectClients } from "../../../../components/Select/Clients/SelectClients";
 import { Memory } from "../../../../components/Select/Budgets/Memory";
 import { ControlPainel } from "../../../../components/Select/Budgets/ControlPainel";
-import { ScrollView } from "react-native-gesture-handler";
+import { ScrollView, TextInput } from "react-native-gesture-handler";
 import { FrontBackPrint } from "../../../../components/Select/Budgets/FrontBackPrint";
 import { Nfc } from "../../../../components/Select/Budgets/Nfc";
 import { SpeedCopy } from "../../../../components/Select/Budgets/SpeedCopy";
 import { CopyResolution } from "../../../../components/Select/Budgets/CopyResolution";
 import { Tooner } from "../../../../components/Select/Budgets/Tooner";
 import { CreateButton } from "../../../../components/PrimaryButton";
+import InputText from "../../../../components/TextInput";
 
 export default function SpecsBudget() {
   return (
-    <View className="flex-1 mt-20">
+    <View className="flex-1 mt-10">
       <HeaderOnlyBack title={"Especificações"} />
-      <View className="ml-5 mt-10">
-        <SearchBar />
+      <View className="ml-3 mt-5">
+        <InputText />
       </View>
       <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
         <View className=" w-full rounded-md items-center flex-1 p-4">
