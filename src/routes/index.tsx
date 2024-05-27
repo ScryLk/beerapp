@@ -21,6 +21,8 @@ import SpecsBudget from '../pages/Budgets/CreateBudgets/SpecsBudget';
 import Clients from '../pages/Clients';
 import CreateClient from '../pages/Clients/CreateClient';
 
+import Financial from '../pages/Financial';
+
 
 const Tab = createStackNavigator();
 
@@ -43,6 +45,7 @@ export default function Menu() {
           <Tab.Screen name="SpecsBudget" component={SpecsBudget} />
           <Tab.Screen name="Clients" component={Clients} />
           <Tab.Screen name="CreateClient" component={CreateClient} />
+          <Tab.Screen name="Financial" component={Financial} />
         
       </Tab.Navigator>
     </NavigationContainer>

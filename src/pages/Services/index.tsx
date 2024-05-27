@@ -1,6 +1,6 @@
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-import { faFile, faGear, faUser } from "@fortawesome/free-solid-svg-icons";
+import { faFile, faGear, faUser, faChartSimple } from "@fortawesome/free-solid-svg-icons";
 import { useNavigation } from "@react-navigation/native";
 import { HeaderOnlyTitle } from "../../components/Headers/HeaderOnlyTitle";
 
@@ -38,7 +38,21 @@ export default function Services() {
             <Text className="text-center mt-2">Clientes</Text>
           </View>
         </TouchableOpacity>
+        <TouchableOpacity
+          className="text-black ml-5 mt-5 bg-slate-200 align-center justify-center shadow w-28 h-32 rounded-md"
+          onPress={() => navigation.navigate("Financial")}
+        >
+          <View className="items-center justify-center ml-6 mb-3 bg-graphColor w-16 h-16 rounded-full">
+            <FontAwesomeIcon icon={faChartSimple} color="white" />
+          </View>
+          <View>
+            <Text className="text-center mt-2">Financeiro</Text>
+          </View>
+        </TouchableOpacity>
       </View>
+
+      
+      
 
       <Text className="text-xl font-semibold mt-10 ml-5">Outros</Text>
 
