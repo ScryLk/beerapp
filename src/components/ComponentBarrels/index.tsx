@@ -2,7 +2,7 @@ import { Text, View } from "react-native";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faClipboard, faDroplet } from "@fortawesome/free-solid-svg-icons";
 
-export default function HomePage() {
+export default function ComponentBarrels() {
   return (
     <View>
       <View className="items-center bg-inputColor mt-5 w-96 ml-5 rounded-lg h-28 justify-center">

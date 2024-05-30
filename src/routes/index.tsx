@@ -4,9 +4,16 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import LoginScreen from '../pages/LoginScreen';
 import HomePage from '../pages/HomePage';
-import Barrels from '../pages/Barrels';
-import Clients from '../pages/Clients';
+
 import Map from '../pages/Map';
+
+import Barrels from '../pages/Barrels';
+import CreateBarrels from '../pages/Barrels/CreateBarrels';
+
+
+import Clients from '../pages/Clients';
+import CreateClients from '../pages/Clients/CreateClients';
+
 import Reserves from '../pages/Reserves';
 
 const Tab = createStackNavigator();
@@ -21,6 +28,8 @@ export default function Menu() {
           <Tab.Screen name="Clients" component={Clients} />
           <Tab.Screen name="Map" component={Map} />
           <Tab.Screen name="Reserves" component={Reserves} />
+          <Tab.Screen name='CreateClients' component={CreateClients} />
+          <Tab.Screen name='CreateBarrels' component={CreateBarrels} />
       </Tab.Navigator>
     </NavigationContainer>
   );

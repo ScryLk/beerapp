@@ -1,7 +1,13 @@
-import { Text } from "react-native";
+import { Text, View } from "react-native";
+import HeaderBackPlusClient from "../../components/Headers/HeaderBackPlusClient";
+import ComponentClient from "../../components/ComponentClients";
 
-export default function Barrels() {
+export default function Clients() {
     return (
-        <Text>Barrels</Text>
+    <View className="mt-10">
+    <HeaderBackPlusClient title={"Clientes"} />
+    <ComponentClient />
+    </View>
+    
     );
 }
