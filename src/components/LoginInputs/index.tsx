@@ -12,7 +12,7 @@ export default function EmailInput() {
     return (
         <View className="bg-inputColor border-2 onFocus:border-inputColor  border-gray-200 mt-10 w-80 h-12 rounded-md flex-row items-center px-3">
             <View className="bg-white w-7 h-7 rounded-full items-center justify-center">
-                <FontAwesomeIcon icon={faEnvelope} style={{color: "#6359e7"}} />
+                <FontAwesomeIcon icon={faEnvelope} style={{color: "#407BFF"}} />
             </View>
             <TextInput
                 onChangeText={setEmail}
@@ -37,7 +37,7 @@ export function PasswordInput() {
     return (
         <View className="bg-inputColor border-2 onFocus:border-inputColor border-gray-200 mt-5 w-80 h-12 rounded-md flex-row items-center px-3">
             <View className="bg-white w-7 h-7 rounded-full items-center justify-center">
-                <FontAwesomeIcon icon={faLock} style={{color: "#6359e7"}} />
+                <FontAwesomeIcon icon={faLock} style={{color: "#407BFF"}} />
             </View>
             <TextInput
                 onChangeText={setPassword}
@@ -49,7 +49,7 @@ export function PasswordInput() {
                 secureTextEntry={secureText}
             />
             <TouchableOpacity onPress={toggleShowPassword}>
-                <FontAwesomeIcon icon={secureText ? faEye : faEyeSlash} style={{color: "#6359e7"}} />
+                <FontAwesomeIcon icon={secureText ? faEye : faEyeSlash} style={{color: "#407BFF"}} />
             </TouchableOpacity>
         </View>
     );
@@ -60,7 +60,7 @@ export function LoginButton() {
     return (
         <View className="justify-end mt-10">
             <StyledComponent component={TouchableOpacity} >
-                <TouchableOpacity className="h-14 bg-primary w-80 rounded-md items-center justify-center" onPress={() => {navigation.navigate('Services');}}>
+                <TouchableOpacity className="h-14 bg-blue-500 w-80 rounded-md items-center justify-center" onPress={() => {navigation.navigate('HomePage');}}>
                     <Text className="text-white font-medium font-Principal text-md">
                         Login
                     </Text>

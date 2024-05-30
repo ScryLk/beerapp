@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#6359E7',
+        primary: '#407BFF',
         whiteBackground: '#FFFFF',
         inputWeaknessColor: '#A5B0C0',
         ButtonsHeader: '#F7F7F7',
@@ -18,7 +18,11 @@ module.exports = {
         clientsColor: '#58CDF8',
         toolsColor: '#797979',
         inputMachinesColor: '#f5f9fe',
-        graphColor: '#FB7E36'
+        graphColor: '#FB7E36',
+        barrisColor: '#407BFF',
+        clientColor:  '#042940',
+        mapColor: '#DE5753',
+        reserveColor: '#28940D'
         },
      },
   },
