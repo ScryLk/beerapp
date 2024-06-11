@@ -31,7 +31,7 @@ export default function HomePage() {
          <TouchableOpacity className="items-center mt-5 justify-center align-middle ml-6 h-20 rounded-lg bg-mapColor w-96" onPress={() => navigation.navigate('Map')}>
             <View className="items-start ml-20 w-96">
                 <Text className="font-bold text-white">
-                    MAPA
+                    LOCALIZAR
                 </Text>
                 <Text className="font-bold text-white">
                     Localize seus Barris
