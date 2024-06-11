@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import HeaderOnlyBack from "../../../components/Headers/HeaderOnlyBack";
-import { Text, View, TouchableOpacity, TextInput } from "react-native";
+import { Text, View, TouchableOpacity, TextInput, Alert } from "react-native";
 import { CreateButton } from "../../../components/Buttons";
 import MapView, { Marker } from "react-native-maps";
 import { useNavigation } from "@react-navigation/native";
@@ -10,8 +10,6 @@ export default function CreateClients() {
   const [name, setName] = useState("");
   const [number, setNumber] = useState("");
   const [address, setAddress] = useState("");
-
-  const navigation = useNavigation();
   const [markerPosition, setMarkerPosition] = useState({
     latitude: -28.2901,
     longitude: -53.4909,
@@ -28,9 +26,13 @@ export default function CreateClients() {
     console.log(address);
   }
 
-  function sendData() {
-    console.log(name, number, address);
-  }
+  const validateData = () => {
+    if (name === "" || number === "" || address === null) {
+      Alert.alert("Erro", "Todos os campos devem ser preenchidos.");
+      return false;
+    }
+    return (Alert.alert("Cliente Cadastrado com sucesso"))
+  };
 
   return (
     <View className="mt-10">
@@ -89,9 +91,9 @@ export default function CreateClients() {
           <StyledComponent component={TouchableOpacity}>
             <TouchableOpacity
               className="h-14 bg-clientsColor w-96 rounded-md items-center justify-center"
-              onPress={() => sendData()}
+              onPress={() => validateData()}
             >
-              <Text className="text-white font-medium font-Principal text-md" onPress={() => {sendData()}}> 
+              <Text className="text-white font-medium font-Principal text-md"> 
                 Criar
               </Text>
             </TouchableOpacity>
