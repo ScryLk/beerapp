@@ -15,6 +15,8 @@ import Clients from '../pages/Clients';
 import CreateClients from '../pages/Clients/CreateClients';
 
 import Reserves from '../pages/Reserves';
+import CreateReserves from '../pages/Reserves/CreateReserves';
+
 
 const Tab = createStackNavigator();
 
@@ -30,6 +32,7 @@ export default function Menu() {
           <Tab.Screen name="Reserves" component={Reserves} />
           <Tab.Screen name='CreateClients' component={CreateClients} />
           <Tab.Screen name='CreateBarrels' component={CreateBarrels} />
+          <Tab.Screen name='CreateReserves' component={CreateReserves} />
       </Tab.Navigator>
     </NavigationContainer>
   );
