@@ -2,11 +2,16 @@ import React, { useState } from "react";
 import HeaderOnlyBack from "../../../components/Headers/HeaderOnlyBack";
 import { Text, View, TouchableOpacity, TextInput, Alert } from "react-native";
 import { StyledComponent } from "nativewind";
+import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
+import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
+import { useNavigation } from "@react-navigation/native";
 
 export default function CreateClients() {
   const [name, setName] = useState("");
   const [number, setNumber] = useState("");
   const [address, setAddress] = useState("");
+  const [isNumberValid, setIsNumberValid] = useState(false);
+  const navigation = useNavigation();
 
   function sendCoordinates() {
     console.log(address);
@@ -17,6 +22,11 @@ export default function CreateClients() {
       Alert.alert("Erro", "Todos os campos devem ser preenchidos.");
       return false;
     }
+    if (!isNumberValid) {
+      Alert.alert("Erro", "Número de telefone inválido");
+      return false;
+    }
+
     const myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
@@ -43,6 +53,7 @@ export default function CreateClients() {
       .then((result) => {
         Alert.alert("Sucesso", "Cliente Cadastrado com sucesso");
         console.log(result);
+        navigation.navigate('Clients'); // Redireciona para a tela de clientes
       })
       .catch((error) => {
         Alert.alert("Erro", "Erro ao cadastrar cliente");
@@ -50,6 +61,41 @@ export default function CreateClients() {
       });
 
     return true;
+  };
+
+  const fetchPhoneDetails = () => {
+    const myHeaders = new Headers();
+    let myNumber = "55" + number;
+    myHeaders.append("Content-Type", "application/json");
+    myHeaders.append("apikey", "mude-me");
+
+    const raw = JSON.stringify({
+      "numbers": [myNumber]
+    });
+
+    const requestOptions = {
+      method: "POST",
+      headers: myHeaders,
+      body: raw,
+      redirect: "follow"
+    };
+
+    fetch("http://192.168.0.155:8080/chat/whatsappNumbers/mobile", requestOptions)
+      .then((response) => response.json())
+      .then((result) => {
+        console.log(result);
+        if (result[0].exists) {
+          setIsNumberValid(true);
+        } else {
+          setIsNumberValid(false);
+          Alert.alert("Erro", "Número de telefone inválido");
+        }
+      })
+      .catch((error) => {
+        setIsNumberValid(false);
+        console.error(error);
+        Alert.alert("Erro", "Erro ao buscar detalhes do telefone");
+      });
   };
 
   return (
@@ -81,8 +127,12 @@ export default function CreateClients() {
             autoCapitalize="none"
             value={number}
             onChangeText={setNumber}
+            onBlur={fetchPhoneDetails} // Adicionado onBlur aqui
             className="flex-1 pl-2 text-black font-bold"
           />
+          {isNumberValid && (
+            <FontAwesomeIcon icon={faCheckCircle} style={{ color: "green", marginLeft: 8 }} />
+          )}
         </View>
       </View>
       <View>

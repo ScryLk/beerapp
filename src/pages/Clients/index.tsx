@@ -1,14 +1,15 @@
-import React, { useEffect, useState } from "react";
-import { Text, TouchableOpacity, View } from "react-native";
+import React, { useEffect, useState, useCallback } from "react";
+import { Text, TouchableOpacity, View, ScrollView } from "react-native";
 import HeaderBackPlusClient from "../../components/Headers/HeaderBackPlusClient";
-import { faPhone, faMap, faMapPin } from "@fortawesome/free-solid-svg-icons";
+import { faPhone, faMap, faMapPin, faSync } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Clients() {
   const [clients, setClients] = useState([]);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
+  const fetchClients = useCallback(() => {
     const requestOptions = {
       method: "GET",
       redirect: "follow"
@@ -21,17 +22,30 @@ export default function Clients() {
         }
         return response.json();
       })
-      .then((result) => setClients(result))
+      .then((result) => {
+        setClients(result);
+        setError(null);
+      })
       .catch((error) => {
         setError(error.toString());
         console.error('Erro ao buscar dados:', error);
       });
   }, []);
 
+  useEffect(() => {
+    fetchClients();
+  }, [fetchClients]);
+
   return (
-    <View className="mt-10">
+    <SafeAreaView className="flex-1">
       <HeaderBackPlusClient title={"Clientes"} />
-      <View>
+      <View className="flex-row justify-between items-center mx-5 mt-5">
+        <Text className="text-2xl font-bold">Clientes</Text>
+        <TouchableOpacity onPress={fetchClients}>
+          <FontAwesomeIcon icon={faSync} size={24} color="black" />
+        </TouchableOpacity>
+      </View>
+      <ScrollView contentContainerStyle={{ paddingBottom: 20 }}>
         {error ? (
           <Text className="text-red-500 ml-5 mt-5">{error}</Text>
         ) : (
@@ -61,7 +75,7 @@ export default function Clients() {
             </View>
           ))
         )}
-      </View>
-    </View>
+      </ScrollView>
+    </SafeAreaView>
   );
 }
