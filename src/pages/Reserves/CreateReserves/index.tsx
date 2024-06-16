@@ -85,7 +85,7 @@ export default function CreateReserves() {
             selectedValue={selectedClient}
             onValueChange={(itemValue, itemIndex) => {
               setSelectedClient(itemValue);
-              setShowClientPicker(false); // Hide the picker after selection
+              setShowClientPicker(false); 
             }}
             style={{ marginBottom: 90, height: 50, width: "80%" }}
           >
