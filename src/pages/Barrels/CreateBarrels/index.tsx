@@ -2,11 +2,13 @@ import HeanderOnlyBack from "../../../components/Headers/HeaderOnlyBack";
 import { Text, TextInput, TouchableOpacity, View } from "react-native";
 import { useState } from "react";
 import { StyledComponent } from "nativewind";
+import { useNavigation } from "@react-navigation/native";
 
 export default function CreateBarrels() {
     const [code, setCode] = useState('');
     const [type, setType] = useState('');
     const [liters, setLiters] = useState('');
+    
 
     function sendData() {
         if (code === '' || type === '' || liters === '') {
@@ -38,6 +40,8 @@ export default function CreateBarrels() {
               .then((result) => {
                 alert('Barril Criado com Sucesso!');
                 console.log(result);
+
+              
               })
               .catch((error) => {
                 alert('Erro ao criar barril');
