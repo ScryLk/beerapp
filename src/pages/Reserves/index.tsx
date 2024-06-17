@@ -43,10 +43,8 @@ export default function Reserves() {
     fetchData();
   }, []);
 
-  // Função para abrir o Google Maps com a localização específica e notificar
   const openGoogleMaps = async (latitude, longitude, reserveId) => {
     try {
-      // Notificar via endpoint /reservas/notify/:id
       const myHeaders = new Headers();
       myHeaders.append(
         "Authorization",
@@ -70,7 +68,6 @@ export default function Reserves() {
 
       console.log("Notification sent successfully");
 
-      // Abrir o Google Maps
       const url = `https://www.google.com/maps/search/?api=1&query=${latitude},${longitude}`;
       Linking.openURL(url);
     } catch (error) {
@@ -79,7 +76,6 @@ export default function Reserves() {
     }
   };
 
-  // Função para confirmar a reserva e exibir um alerta
   const confirmReservation = async (id) => {
     try {
       const myHeaders = new Headers();
@@ -103,13 +99,12 @@ export default function Reserves() {
         throw new Error("Failed to confirm reservation");
       }
 
-      // Atualizar o estado para refletir a reserva confirmada
       const updatedReservesData = [...reservesData];
       const updatedIndex = updatedReservesData.findIndex(
         (reserve) => reserve.id === id
       );
       if (updatedIndex !== -1) {
-        updatedReservesData[updatedIndex].confirmada = true; // Supondo que `confirmada` seja um campo na sua estrutura de dados da reserva
+        updatedReservesData[updatedIndex].confirmada = true;
         setReservesData(updatedReservesData);
         Alert.alert(
           "Reserva Confirmada",
@@ -120,6 +115,14 @@ export default function Reserves() {
       setError(error.toString());
       console.error("Error confirming reservation:", error);
     }
+  };
+
+  const getBackgroundColor = (reserve) => {
+    const now = new Date();
+    const endTime = new Date(reserve.dataFinal);
+    const timeDifference = (endTime - now) / (1000 * 60 * 60); // diferença em horas
+
+    return timeDifference <= 1 ? 'bg-red-500' : 'bg-blue-500';
   };
 
   return (
@@ -174,6 +177,7 @@ export default function Reserves() {
                   </TouchableOpacity>
                 </View>
               </View>
+              <View className={`${getBackgroundColor(reserve)} h-7 w-7 rounded-full`} />
             </View>
             <View className="flex-row justify-between px-2 mt-2">
               <Text>{new Date(reserve.dataInicial).toLocaleString()}</Text>

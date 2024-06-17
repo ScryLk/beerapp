@@ -89,12 +89,6 @@ export default function CreateReserves() {
     }
 
     const oneHourInMillis = 60 * 60 * 1000;
-    if (endDate - startDate < oneHourInMillis) {
-      Alert.alert(
-        "A data de término deve ser pelo menos uma hora depois da data de início."
-      );
-      return;
-    }
 
     const dataToSend = {
       dataFinal: endDate.toISOString(),
@@ -186,13 +180,9 @@ export default function CreateReserves() {
 
   const handleEndDateConfirm = (date) => {
     const oneHourInMillis = 60 * 60 * 1000;
-    if (startDate && date - startDate < oneHourInMillis) {
-      Alert.alert(
-        "A data de término deve ser pelo menos uma hora depois da data de início."
-      );
-    } else {
+  
       setEndDate(date);
-    }
+
     hideEndDatePicker();
   };
 
