@@ -16,6 +16,7 @@ import DateTimePickerModal from "react-native-modal-datetime-picker";
 import { FontAwesome } from "@expo/vector-icons";
 
 import HeaderOnlyBack from "../../../components/Headers/HeaderOnlyBack";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function CreateReserves() {
   const [selectedBarrel, setSelectedBarrel] = useState(null);
@@ -70,7 +71,7 @@ export default function CreateReserves() {
     setShowClientPicker(!showClientPicker);
   };
 
-  const sendData = () => {
+  const sendData = async () => {
     if (selectedBarrel === null) {
       Alert.alert("Selecione um barril para continuar");
       return;
@@ -101,6 +102,8 @@ export default function CreateReserves() {
 
     const myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
+        let token = await AsyncStorage.getItem('token');
+        myHeaders.append("Authorization", `Bearer ${token}`);
     myHeaders.append(
       "Authorization",
       "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNzE4NTg3OTkyLCJleHAiOjE3MTg1OTE1OTJ9.gplQZ6ubMDL7mSUD98fMLLMepOOB1mrcYum1gR0GgPQ"

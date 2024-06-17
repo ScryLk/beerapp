@@ -3,6 +3,8 @@ import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faEnvelope, faEye, faEyeSlash, faLock } from "@fortawesome/free-solid-svg-icons";
 import { useNavigation } from "@react-navigation/native";
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
 
 const Figure = require("../../assets/images/loginImage.png");
 
@@ -24,7 +26,6 @@ export default function LoginScreen() {
 
         const myHeaders: Headers = new Headers();
         myHeaders.append("Content-Type", "application/json");
-        
         const raw: string = JSON.stringify({
           email: email,
           password: password
@@ -42,7 +43,9 @@ export default function LoginScreen() {
             .then((response) => response.json())
             .then((result) => {
                 console.log(result);
-                if (result.success) { // Assumindo que a resposta inclui uma propriedade 'success'
+                if (result.success) { 
+                    // Salvar token no AsyncStorage
+                    AsyncStorage.setItem('token', result.token);
                     navigation.navigate('HomePage');
                 } else {
                     Alert.alert("Login falhou", result.message || "Credenciais inválidas");

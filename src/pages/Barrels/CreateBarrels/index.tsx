@@ -3,6 +3,7 @@ import { Text, TextInput, TouchableOpacity, View } from "react-native";
 import { useState } from "react";
 import { StyledComponent } from "nativewind";
 import { useNavigation } from "@react-navigation/native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function CreateBarrels() {
     const [code, setCode] = useState('');
@@ -10,12 +11,14 @@ export default function CreateBarrels() {
     const [liters, setLiters] = useState('');
     
 
-    function sendData() {
+  async  function sendData() {
         if (code === '' || type === '' || liters === '') {
             alert('Preencha todos os campos para continuar');
         } else {
             const myHeaders = new Headers();
             myHeaders.append("Content-Type", "application/json");
+        let token = await AsyncStorage.getItem('token');
+        myHeaders.append("Authorization", `Bearer ${token}`);
 
             const raw = JSON.stringify({
                 "codigo": code,

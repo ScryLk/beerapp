@@ -4,6 +4,7 @@ import HeaderBackPlusReserves from "../../components/Headers/HeaderBackPlusReser
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faUser, faMap, faCheck } from "@fortawesome/free-solid-svg-icons";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function Reserves() {
   const [reservesData, setReservesData] = useState([]);
@@ -51,6 +52,8 @@ export default function Reserves() {
         "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNzE4NTg3OTkyLCJleHAiOjE3MTg1OTE1OTJ9.gplQZ6ubMDL7mSUD98fMLLMepOOB1mrcYum1gR0GgPQ"
       );
       myHeaders.append("Content-Type", "application/json");
+        let token = await AsyncStorage.getItem('token');
+        myHeaders.append("Authorization", `Bearer ${token}`);
 
       const requestOptions = {
         method: "PUT",
@@ -84,6 +87,8 @@ export default function Reserves() {
         "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNzE4NTg3OTkyLCJleHAiOjE3MTg1OTE1OTJ9.gplQZ6ubMDL7mSUD98fMLLMepOOB1mrcYum1gR0GgPQ"
       );
       myHeaders.append("Content-Type", "application/json");
+        let token = await AsyncStorage.getItem('token');
+        myHeaders.append("Authorization", `Bearer ${token}`);
 
       const requestOptions = {
         method: "PUT",

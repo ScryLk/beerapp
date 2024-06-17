@@ -5,6 +5,7 @@ import { StyledComponent } from "nativewind";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 import { useNavigation } from "@react-navigation/native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function CreateClients() {
   const [name, setName] = useState("");
@@ -17,7 +18,7 @@ export default function CreateClients() {
     console.log(address);
   }
 
-  const validateData = () => {
+  const validateData = async () => {
     console.log(name, number, address, isNumberValid)
     if (name === "" || number === "" || address === "") {
       Alert.alert("Erro", "Todos os campos devem ser preenchidos.");
@@ -30,6 +31,8 @@ export default function CreateClients() {
 
     const myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
+        let token = await AsyncStorage.getItem('token');
+        myHeaders.append("Authorization", `Bearer ${token}`);
 
     const raw = JSON.stringify({
       "nome": name,
@@ -64,10 +67,12 @@ export default function CreateClients() {
     return true;
   };
 
-  const fetchPhoneDetails = () => {
+  const fetchPhoneDetails = async () => {
     const myHeaders = new Headers();
     let myNumber = "55" + number;
     myHeaders.append("Content-Type", "application/json");
+        let token = await AsyncStorage.getItem('token');
+        myHeaders.append("Authorization", `Bearer ${token}`);
     myHeaders.append("apikey", "mude-me");
 
     const raw = JSON.stringify({
