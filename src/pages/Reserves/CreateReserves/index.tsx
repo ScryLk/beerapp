@@ -104,13 +104,18 @@ export default function CreateReserves() {
       longitude: markerPosition.longitude,
     };
 
-    fetch("http://192.168.0.155:3000/reservas/", {
+    const myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+    myHeaders.append("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNzE4NTg3OTkyLCJleHAiOjE3MTg1OTE1OTJ9.gplQZ6ubMDL7mSUD98fMLLMepOOB1mrcYum1gR0GgPQ");
+
+    const requestOptions = {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
+      headers: myHeaders,
       body: JSON.stringify(dataToSend),
-    })
+      redirect: "follow"
+    };
+
+    fetch("http://192.168.0.155:3000/reservas/", requestOptions)
       .then((response) => response.json())
       .then((result) => {
         console.log(result);
