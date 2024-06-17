@@ -54,7 +54,7 @@ export default function CreateClients() {
       .then((result) => {
         Alert.alert("Sucesso", "Cliente Cadastrado com sucesso");
         console.log(result);
-        navigation.navigate('Clients'); // Redireciona para a tela de clientes
+        navigation.navigate('Clients'); 
       })
       .catch((error) => {
         Alert.alert("Erro", "Erro ao cadastrar cliente");
@@ -128,7 +128,7 @@ export default function CreateClients() {
             autoCapitalize="none"
             value={number}
             onChangeText={setNumber}
-            onBlur={fetchPhoneDetails} // Adicionado onBlur aqui
+            onBlur={fetchPhoneDetails} 
             className="flex-1 pl-2 text-black font-bold"
           />
           {isNumberValid && (
