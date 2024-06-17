@@ -46,7 +46,8 @@
     "react-native-web": "~0.19.6",
     "tailwind-rn": "^4.2.0",
     "typeface-inter": "^3.18.1",
-    "typescript": "~5.3.3"
+    "typescript": "~5.3.3",
+    "expo-notifications": "~0.28.9"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Text, View } from "react-native";
+import { Text, View, SafeAreaView, ScrollView } from "react-native";
 import SearchBar from "../../components/SearchBar";
 import ComponentBarrels from "../../components/ComponentBarrels";
 import HeaderBackPlusBarrels from "../../components/Headers/HeaderBackPlusBarrels";
@@ -26,7 +26,7 @@ export default function Barrels() {
     }, []);
 
     return (
-        <View className="mt-10">
+        <SafeAreaView style={{ flex: 1 }}>
             <HeaderBackPlusBarrels title={"Meus Barris"} />
             <View className="ml-5">
                 <SearchBar />
@@ -34,7 +34,7 @@ export default function Barrels() {
             {error ? (
                 <Text className="text-red-500 ml-5 mt-5">{error}</Text>
             ) : (
-                <View>
+                <ScrollView>
                     {barrels.map((barrel, index) => (
                         <View key={index} className="items-center bg-inputColor mt-5 w-96 ml-5 rounded-lg h-28 justify-center">
                             <View className="flex-row w-96 mb-3 ml-5 items-center">
@@ -56,8 +56,8 @@ export default function Barrels() {
                             </View>
                         </View>
                     ))}
-                </View>
+                </ScrollView>
             )}
-        </View>
+        </SafeAreaView>
     );
 }

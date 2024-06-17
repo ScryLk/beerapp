@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Text, View, Alert, Linking } from "react-native";
+import { Text, View, Alert, Linking, SafeAreaView, ScrollView } from "react-native";
 import HeaderBackPlusReserves from "../../components/Headers/HeaderBackPlusReserves";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faUser, faMap, faCheck } from "@fortawesome/free-solid-svg-icons";
@@ -126,66 +126,68 @@ export default function Reserves() {
   };
 
   return (
-    <View className="mt-12">
+    <SafeAreaView style={{ flex: 1 }}>
       <HeaderBackPlusReserves title={"Reservas"} />
       {error ? (
         <Text className="ml-5 mt-5 text-red-500">{error}</Text>
       ) : (
-        reservesData.map((reserve, index) => (
-          <View
-            key={index}
-            className="flex-col bg-gray-200 border-2 border-slate-300 mt-2 w-96 ml-6 rounded-lg h-36 justify-center"
-          >
-            <View className="flex-row mb-3 ml-5 items-center">
-              <Text>{index + 1}</Text>
-              <Text className="ml-2 font-bold text-lg">
-                {reserve.barril.codigo}
-              </Text>
-            </View>
-            <View className="flex-row justify-between px-2">
-              <View className="flex-col items-center">
-                <View className="bg-slate-300 w-16 h-16 justify-center items-center rounded-full">
-                  <FontAwesomeIcon icon={faUser} color="black" size={20} />
-                  <Text>{reserve.cliente.nome}</Text>
-                </View>
+        <ScrollView>
+          {reservesData.map((reserve, index) => (
+            <View
+              key={index}
+              className="flex-col bg-gray-200 border-2 border-slate-300 mt-2 w-96 ml-6 rounded-lg h-36 justify-center"
+            >
+              <View className="flex-row mb-3 ml-5 items-center">
+                <Text>{index + 1}</Text>
+                <Text className="ml-2 font-bold text-lg">
+                  {reserve.barril.codigo}
+                </Text>
               </View>
-              <View className="flex-col items-center">
-                <View className="bg-slate-300 w-16 h-16 justify-center items-center rounded-full">
-                  <TouchableOpacity
-                    onPress={() =>
-                      openGoogleMaps(
-                        reserve.latitude,
-                        reserve.longitude,
-                        reserve.id
-                      )
-                    }
-                  >
-                    <FontAwesomeIcon icon={faMap} color="black" size={20} />
-                  </TouchableOpacity>
+              <View className="flex-row justify-between px-2">
+                <View className="flex-col items-center">
+                  <View className="bg-slate-300 w-16 h-16 justify-center items-center rounded-full">
+                    <FontAwesomeIcon icon={faUser} color="black" size={20} />
+                    <Text>{reserve.cliente.nome}</Text>
+                  </View>
                 </View>
-              </View>
-              <View className="flex-col items-center">
-                <View className="bg-slate-300 w-16 h-16 justify-center items-center rounded-full">
-                  <TouchableOpacity
-                    onPress={() => confirmReservation(reserve.id)}
-                  >
-                    <FontAwesomeIcon
-                      icon={faCheck}
-                      size={20}
-                      color={reserve.confirmada ? "green" : "black"}
-                    />
-                  </TouchableOpacity>
+                <View className="flex-col items-center">
+                  <View className="bg-slate-300 w-16 h-16 justify-center items-center rounded-full">
+                    <TouchableOpacity
+                      onPress={() =>
+                        openGoogleMaps(
+                          reserve.latitude,
+                          reserve.longitude,
+                          reserve.id
+                        )
+                      }
+                    >
+                      <FontAwesomeIcon icon={faMap} color="black" size={20} />
+                    </TouchableOpacity>
+                  </View>
                 </View>
+                <View className="flex-col items-center">
+                  <View className="bg-slate-300 w-16 h-16 justify-center items-center rounded-full">
+                    <TouchableOpacity
+                      onPress={() => confirmReservation(reserve.id)}
+                    >
+                      <FontAwesomeIcon
+                        icon={faCheck}
+                        size={20}
+                        color={reserve.confirmada ? "green" : "black"}
+                      />
+                    </TouchableOpacity>
+                  </View>
+                </View>
+                <View className={`${getBackgroundColor(reserve)} h-7 w-7 rounded-full`} />
               </View>
-              <View className={`${getBackgroundColor(reserve)} h-7 w-7 rounded-full`} />
+              <View className="flex-row justify-between px-2 mt-2">
+                <Text>{new Date(reserve.dataInicial).toLocaleString()}</Text>
+                <Text>{new Date(reserve.dataFinal).toLocaleString()}</Text>
+              </View>
             </View>
-            <View className="flex-row justify-between px-2 mt-2">
-              <Text>{new Date(reserve.dataInicial).toLocaleString()}</Text>
-              <Text>{new Date(reserve.dataFinal).toLocaleString()}</Text>
-            </View>
-          </View>
-        ))
+          ))}
+        </ScrollView>
       )}
-    </View>
+    </SafeAreaView>
   );
 }
