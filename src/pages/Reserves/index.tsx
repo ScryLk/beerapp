@@ -21,7 +21,7 @@ export default function Reserves() {
           redirect: "follow"
         };
 
-        const response = await fetch("http://192.168.0.155:3000/reservas", requestOptions);
+        const response = await fetch("http://172.20.10.2:3000/reservas", requestOptions);
         if (!response.ok) {
           throw new Error('Failed to fetch data');
         }
@@ -51,7 +51,7 @@ export default function Reserves() {
         redirect: "follow"
       };
 
-      const notifyResponse = await fetch(`http://192.168.0.155:3000/reservas/notify/${reserveId}`, requestOptions);
+      const notifyResponse = await fetch(`http://172.20.10.2:3000/reservas/notify/${reserveId}`, requestOptions);
       if (!notifyResponse.ok) {
         throw new Error('Failed to notify');
       }
@@ -81,7 +81,7 @@ export default function Reserves() {
         redirect: "follow"
       };
 
-      const response = await fetch(`http://192.168.0.155:3000/reservas/${id}`, requestOptions);
+      const response = await fetch(`http://172.20.10.2:3000/reservas/${id}`, requestOptions);
       if (!response.ok) {
         throw new Error('Failed to confirm reservation');
       }
@@ -101,27 +101,39 @@ export default function Reserves() {
   };
 
   return (
-    <View style={{ marginTop: 50 }}>
+    <View className="mt-12">
       <HeaderBackPlusReserves title={"Reservas"} />
       {error ? (
-        <Text style={{ marginLeft: 5, marginTop: 5, color: 'red' }}>{error}</Text>
+        <Text className="ml-5 mt-5 text-red-500">{error}</Text>
       ) : (
         reservesData.map((reserve, index) => (
-          <View key={index} style={{ alignItems: 'center', backgroundColor: '#f0f0f0', marginTop: 10, width: 320, marginLeft: 5, borderRadius: 10, height: 140, justifyContent: 'center' }}>
-            <View style={{ flexDirection: 'row', marginLeft: 10, alignItems: 'center' }}>
+          <View key={index} className="flex-col bg-gray-200 border-2 border-slate-300 mt-2 w-96 ml-6 rounded-lg h-36 justify-center">
+            <View className="flex-row mb-3 ml-5 items-center">
               <Text>{index + 1}</Text>
-              <Text style={{ marginLeft: 10, fontWeight: 'bold', fontSize: 18 }}>{reserve.barril.codigo}</Text>
+              <Text className="ml-2 font-bold text-lg">{reserve.barril.codigo}</Text>
             </View>
-            <View style={{ flexDirection: 'row', marginTop: 5, alignItems: 'center', marginLeft: 10 }}>
-              <FontAwesomeIcon icon={faUser} style={{ color: "gray" }} size={20} />
-              <Text style={{ marginLeft: 10 }}>{reserve.cliente.nome}</Text>
+            <View className="flex-row justify-between px-2">
+              <View className="flex-col items-center">
+                <View className="bg-slate-300 w-16 h-16 justify-center items-center rounded-full">
+                <FontAwesomeIcon icon={faUser} color="black" size={20} />
+                <Text>{reserve.cliente.nome}</Text>
+                </View>
+              </View>
+              <View className="flex-col items-center">
+              <View className="bg-slate-300 w-16 h-16 justify-center items-center rounded-full">
+                <TouchableOpacity onPress={() => openGoogleMaps(reserve.latitude, reserve.longitude, reserve.id)}>
+                  <FontAwesomeIcon icon={faMap} color="black" size={20} />
+                </TouchableOpacity>
+                </View>
+              </View>
+              <View className="flex-col items-center">
+              <View className="bg-slate-300 w-16 h-16 justify-center items-center rounded-full">
+                <TouchableOpacity onPress={() => confirmReservation(reserve.id)}>
+                  <FontAwesomeIcon icon={faCheck} size={20} color={reserve.confirmada ? "green" : "black"} />
+                </TouchableOpacity>
+                </View>
+              </View>
             </View>
-            <TouchableOpacity style={{ marginTop: 10 }} onPress={() => openGoogleMaps(reserve.latitude, reserve.longitude, reserve.id)}>
-              <FontAwesomeIcon icon={faMap} style={{ color: "gray" }} size={20} />
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => confirmReservation(reserve.id)}>
-              <FontAwesomeIcon icon={faCheck} size={20} color={reserve.confirmada ? "green" : "gray"} />
-            </TouchableOpacity>
           </View>
         ))
       )}

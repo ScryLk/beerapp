@@ -11,7 +11,7 @@ export default function Barrels() {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        fetch("http://192.168.0.155:3000/barris")
+        fetch("http://172.20.10.2:3000/barris")
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok ' + response.statusText);

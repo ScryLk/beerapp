@@ -38,7 +38,7 @@ export default function LoginScreen() {
         };
         
 
-        fetch("http://192.168.0.155:3000/users/login", requestOptions)
+        fetch("http://172.20.10.2:3000/users/login", requestOptions)
             .then((response) => response.json())
             .then((result) => {
                 console.log(result);

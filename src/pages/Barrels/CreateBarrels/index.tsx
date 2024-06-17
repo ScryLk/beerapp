@@ -28,7 +28,7 @@ export default function CreateBarrels() {
                 redirect: "follow"
             };
 
-            fetch("http://192.168.0.155:3000/barris/", requestOptions)
+            fetch("http://172.20.10.2:3000/barris/", requestOptions)
               .then((response) => {
                 if (!response.ok) {
                   throw new Error('Network response was not ok');

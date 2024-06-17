@@ -18,6 +18,7 @@ export default function CreateClients() {
   }
 
   const validateData = () => {
+    console.log(name, number, address, isNumberValid)
     if (name === "" || number === "" || address === "") {
       Alert.alert("Erro", "Todos os campos devem ser preenchidos.");
       return false;
@@ -43,7 +44,7 @@ export default function CreateClients() {
       redirect: "follow"
     };
 
-    fetch("http://192.168.0.155:3000/clientes/", requestOptions)
+    fetch("http://172.20.10.2:3000/clientes/", requestOptions)
       .then((response) => {
         if (!response.ok) {
           throw new Error('Network response was not ok ' + response.statusText);
@@ -80,7 +81,7 @@ export default function CreateClients() {
       redirect: "follow"
     };
 
-    fetch("http://192.168.0.155:8080/chat/whatsappNumbers/mobile", requestOptions)
+    fetch("http://172.20.10.2:8080/chat/whatsappNumbers/mobile", requestOptions)
       .then((response) => response.json())
       .then((result) => {
         console.log(result);

@@ -42,16 +42,17 @@ export default function CreateReserves() {
 
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(null);
-  const [isStartDatePickerVisible, setStartDatePickerVisibility] = useState(false);
+  const [isStartDatePickerVisible, setStartDatePickerVisibility] =
+    useState(false);
   const [isEndDatePickerVisible, setEndDatePickerVisibility] = useState(false);
 
   useEffect(() => {
-    fetch("http://192.168.0.155:3000/barris/")
+    fetch("http://172.20.10.2:3000/barris/")
       .then((response) => response.json())
       .then((result) => setBarrels(result))
       .catch((error) => console.error(error));
 
-    fetch("http://192.168.0.155:3000/clientes/")
+    fetch("http://172.20.10.2:3000/clientes/")
       .then((response) => response.json())
       .then((result) => setClients(result))
       .catch((error) => console.error(error));
@@ -106,16 +107,19 @@ export default function CreateReserves() {
 
     const myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
-    myHeaders.append("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNzE4NTg3OTkyLCJleHAiOjE3MTg1OTE1OTJ9.gplQZ6ubMDL7mSUD98fMLLMepOOB1mrcYum1gR0GgPQ");
+    myHeaders.append(
+      "Authorization",
+      "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNzE4NTg3OTkyLCJleHAiOjE3MTg1OTE1OTJ9.gplQZ6ubMDL7mSUD98fMLLMepOOB1mrcYum1gR0GgPQ"
+    );
 
     const requestOptions = {
       method: "POST",
       headers: myHeaders,
       body: JSON.stringify(dataToSend),
-      redirect: "follow"
+      redirect: "follow",
     };
 
-    fetch("http://192.168.0.155:3000/reservas/", requestOptions)
+    fetch("http://172.20.10.2:3000/reservas/", requestOptions)
       .then((response) => response.json())
       .then((result) => {
         console.log(result);
@@ -276,7 +280,11 @@ export default function CreateReserves() {
             }}
           />
           <View style={{ height: 400, marginVertical: 10 }}>
-            <MapView style={{ flex: 1 }} region={region} onPress={handleMapPress}>
+            <MapView
+              style={{ flex: 1 }}
+              region={region}
+              onPress={handleMapPress}
+            >
               <Marker coordinate={markerPosition} />
             </MapView>
           </View>
