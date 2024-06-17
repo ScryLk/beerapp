@@ -17,6 +17,11 @@ export default function LoginScreen() {
     }
 
     const handleLogin = () => {
+        if (email.trim() === '' || password.trim() === '') {
+            Alert.alert("Campos inválidos", "Por favor, preencha ambos os campos de e-mail e senha.");
+            return;
+        }
+
         const myHeaders: Headers = new Headers();
         myHeaders.append("Content-Type", "application/json");
         
@@ -33,19 +38,19 @@ export default function LoginScreen() {
         };
         
 
-        fetch("http://192.168.0.155:3000/users/login",   requestOptions)
+        fetch("http://192.168.0.155:3000/users/login", requestOptions)
             .then((response) => response.json())
             .then((result) => {
                 console.log(result);
                 if (result.success) { // Assumindo que a resposta inclui uma propriedade 'success'
                     navigation.navigate('HomePage');
                 } else {
-                    Alert.alert("Login failed", result.message || "Invalid credentials");
+                    Alert.alert("Login falhou", result.message || "Credenciais inválidas");
                 }
             })
             .catch((error) => {
                 console.error(error);
-                Alert.alert("Login failed", "An error occurred. Please try again.");
+                Alert.alert("Login falhou", "Ocorreu um erro. Por favor, tente novamente.");
             });
     };
 
